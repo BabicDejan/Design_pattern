@@ -1,0 +1,30 @@
+#Old --> JSON - str
+#New --> XML - int
+
+#inheritance example
+
+class Old: #string class
+    def get(self):
+        return "123"
+
+class New: #int class
+    def get(self):
+        return 123
+
+#ovo iziskuje kreiranje nove klase koja je adapter
+class Adapter(New):
+    def get(self):
+        return str(super(Adapter, self).get())
+
+def main(obj):
+    print("The result is " + obj.get())
+
+
+if __name__ == '__main__':
+    obj = Adapter()
+    main(obj)
+
+
+
+
+
